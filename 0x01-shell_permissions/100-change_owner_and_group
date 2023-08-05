@@ -1,2 +1,2 @@
 #!/bin/bash
-find /0x01-shell_permissions -exec chwon vincent:staff
+find /0x01-shell_permissions -exec chown vincent:staff *
