@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Display "Best School" and "Hi".
+
+count=0
+
+while [ $count -lt 9 ]
+do
+	if [ $count -eq 8 ]
+	then
+		echo "Hi"
+	fi
+	echo "Best School"
+	(( count++ ))
+done
