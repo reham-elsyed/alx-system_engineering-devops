@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Directory to print data
+
+while read -r cont; do
+	echo "$cont" | cut -d ":" -f1,3,6 
+done < "/etc/passwd"
