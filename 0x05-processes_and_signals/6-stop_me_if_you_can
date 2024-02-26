@@ -2,6 +2,6 @@
 # Kills 4-to_infinity_and_beyond
 
 while read -r pat; do
- kill "$pat"
+	pkill "$pat"
 done < 4-to_infinity_and_beyond
 ~
