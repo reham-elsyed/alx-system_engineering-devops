@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Dixplay text undefinitly
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
