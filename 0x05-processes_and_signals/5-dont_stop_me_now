@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Terminate process
 
-kill "$(grep -f 4-to_infinity_and_beyond)"
+kill "4-to_infinity_and_beyond"
