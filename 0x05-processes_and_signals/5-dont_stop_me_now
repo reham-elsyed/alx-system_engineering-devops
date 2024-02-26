@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 #Terminate process
-
-kill
+while read -r pat; do
+ kill "$pat"
+done < 4-to_infinity_and_beyond
