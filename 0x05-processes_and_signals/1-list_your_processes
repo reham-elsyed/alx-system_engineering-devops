@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Display number of runnung processes
+
+ps -a -x -u -f
