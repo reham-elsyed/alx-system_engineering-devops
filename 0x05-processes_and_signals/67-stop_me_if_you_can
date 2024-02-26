@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Terminate process
+while read -r pat; do
+ kill "$pat"
+done < 7-highlander
