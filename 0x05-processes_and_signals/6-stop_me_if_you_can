@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
-# Kills 4-to_infinity_and_beyond process
-pkill -f 4-to_infinity_and_beyond
+# Kills 4-to_infinity_and_beyond
+
+while read -r pat; do
+ kill "$pat"
+done < 4-to_infinity_and_beyond
+~
