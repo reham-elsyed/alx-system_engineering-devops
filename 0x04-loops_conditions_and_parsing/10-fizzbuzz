@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#Display buzz fizz
+
+for count in {1..100}
+do
+	if [ $((count % 15)) == 0 ]
+	then
+		echo "FizzBuzz"
+	elif [ $((count % 5)) -eq 0 ]
+	then
+		echo "Buzz"
+	elif [ $((Count % 3)) -eq 0 ]
+	then
+		echo "Fizz"
+	else
+		echo "$(( count ))"
+	fi
+done
