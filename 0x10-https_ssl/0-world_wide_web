@@ -3,24 +3,20 @@
 # Bash script that displays information about subdomains
 
 allsubdomains=("www" "lb-01" "web-01" "web-02")
-
 prettifydig () {
-    # The function now expects a single argument: the full subdomain name
-    dig "$1" | grep -A1 ';; ANSWER SECTION:' | grep -v 'ANSWER' | awk -v awksub="$1" '{printf "The subdomain %s is a %s record and points to %s\n", awksub, $4, $5}'
+    dig "$subdomain.$domain" | grep -A1 ';; ANSWER SECTION:' | grep -v 'ANSWER' | awk -v awksub="$subdomain" '{printf "The subdomain %s is a %s record and points to %s\n", awksub, $4, $5}'
 }
 
 if [ $# -eq 1 ]
 then 
-    # Iterate over all subdomains and call prettifydig with the full subdomain name
     for a in "${allsubdomains[@]}"
     do
-        domain="$1"
-        subdomain="$a"
-        prettifydig "$subdomain.$domain"
+	domain="$1"
+	subdomain="$a"
+	prettifydig "$a" "$1"
     done
 elif [ $# -eq 2 ]; then
-    # When two arguments are passed, call prettifydig with the full subdomain name
     domain="$1"
     subdomain="$2"
-    prettifydig "$subdomain.$domain"
+    prettifydig "$2" "$1"
 fi
