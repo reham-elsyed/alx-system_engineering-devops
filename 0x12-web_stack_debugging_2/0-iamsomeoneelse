@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Write a Bash script that configures container to run nginx as nginx user, listen on all active IPs port 8080
+
+# Check if a username was provided as an argument
 if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <username>"
     exit 1
@@ -8,12 +9,11 @@ fi
 # Store the username provided as an argument
 USERNAME=$1
 
+# Fetch the home directory of the user
+USER_HOME=$(getent passwd "$USERNAME" | cut -d: -f6)
+
 # Execute the whoami command as the specified user
-echo "Running whoami as $USERNAME"
 sudo -u "$USERNAME" whoami
 
-sudo sed -i '4 i\user ${1};' /etc/nginx/nginx.conf
-pkill apache2
-sudo sed -i 's/80/8080/g' /etc/nginx/sites-available/default
-sudo service nginx restart
-
+# Print the home directory of the user
+#echo "Home directory of "$USERNAME": "$USER_HOME""
